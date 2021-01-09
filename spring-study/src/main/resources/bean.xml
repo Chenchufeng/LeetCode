@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="Address" class="entity.Address">
+        <property name="address" value="珠海"></property>
+    </bean>
+    <bean id="student" class="entity.Student">
+        <property name="name" value="chufeng"/>
+        <property name="address" ref="Address" />
+        <property name="books">
+            <array>
+                <value>西游记</value>
+                <value>红楼梦</value>
+                <value>水浒传</value>
+            </array>
+        </property>
+        <property name="card">
+            <map>
+                <entry key="中国邮政" value="456456456465456"/>
+                <entry key="建设" value="1456682255511"/>
+            </map>
+        </property>
+        <property name="hobbys">
+            <list>
+                <value>听歌</value>
+                <value>看电影</value>
+                <value>爬山</value>
+            </list>
+        </property>
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>BOB</value>
+                <value>COC</value>
+            </set>
+        </property>
+        <property name="wife">
+            <null />
+        </property>
+        <property name="info">
+            <props>
+                <prop key="学号">20201223</prop>
+                <prop key="性别">男</prop>
+                <prop key="姓名">小明</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="p_namespace_user" class="entity.User" p:name="Kevin Durant" p:age="23" />
+    <bean id="c_namespace_user" class="entity.User" c:name="Russel Westbrook" c:age="22" scope="singleton"/>
+
+</beans>
